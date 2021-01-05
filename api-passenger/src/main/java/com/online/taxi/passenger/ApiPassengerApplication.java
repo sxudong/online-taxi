@@ -25,16 +25,13 @@ import com.online.taxi.passenger.annotation.ExcudeFeignConfig;
 		@ComponentScan.Filter(type = FilterType.ANNOTATION,value=ExcudeFeignConfig.class)
 })
 public class ApiPassengerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(ApiPassengerApplication.class, args);
 	}
-	
-	
+
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-	
 }
