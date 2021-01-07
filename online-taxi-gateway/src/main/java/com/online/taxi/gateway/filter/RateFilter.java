@@ -13,6 +13,7 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 /**
+ * 限流配置
  * @author yueyi2019
  */
 @Component

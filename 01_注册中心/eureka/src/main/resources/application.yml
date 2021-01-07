@@ -12,9 +12,10 @@ spring:
 eureka:
   client:
     register-with-eureka: true # 是否注册到eureka
-    fetch-registry: false      # 是否从eureka获取注册信息
+    fetch-registry: false      # 是否需要拉取服务信息，默认未true
     service-url:               # Eureka客户端与Eureka服务端进行交互的地址
       defaultZone: http://root:root@localhost:7900/eureka/ #这里的root是security的用户和密码，自已注册也要认证
+      #defaultZone: http://root:root@eureka-7900:7900/eureka/ #需要在hosts里配置：127.0.0.1 eureka-7900
   server: 
     #关闭自我保护
     enable-self-preservation: false

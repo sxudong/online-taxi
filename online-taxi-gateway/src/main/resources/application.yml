@@ -17,7 +17,8 @@ eureka:
   client:
     #设置服务注册中心的URL
     service-url:                      
-      defaultZone: http://root:root@eureka-7901:7901/eureka/
+      #defaultZone: http://root:root@eureka-7901:7901/eureka/
+      defaultZone: http://root:root@localhost:7900/eureka/
   instance: 
     hostname: localhost
     instance-id: online-taxi-gateway 

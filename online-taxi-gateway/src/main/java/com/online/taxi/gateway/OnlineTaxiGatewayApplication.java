@@ -12,9 +12,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableEurekaClient
 @EnableZuulProxy
 public class OnlineTaxiGatewayApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineTaxiGatewayApplication.class, args);
 	}
-
 }

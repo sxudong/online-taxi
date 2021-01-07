@@ -6,6 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
+ * 验证码服务项目
  * @author yueyi2019
  */
 @EnableEurekaClient

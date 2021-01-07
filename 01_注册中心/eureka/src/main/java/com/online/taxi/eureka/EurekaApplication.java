@@ -8,7 +8,7 @@ import com.netflix.eureka.registry.InstanceRegistry;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl;
 /**
- * http://localhost:7900/
+ * http://localhost:7900/  http://eureka-7900:7900/
  *
  * @author yueyi2019
  */
