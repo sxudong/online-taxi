@@ -9,6 +9,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 /**
+ * 客户端
  * @author yueyi2019
  */
 public class MqClient {
@@ -17,7 +18,7 @@ public class MqClient {
      * @param msg
      * @throws Exception
      */
-    public static void produce(String msg) throws Exception{
+    public static void produce(String msg) throws Exception {
         Socket socket = new Socket(InetAddress.getLocalHost(), BrokerServer.PORT);
         PrintWriter out = new PrintWriter(socket.getOutputStream());
 
@@ -26,7 +27,12 @@ public class MqClient {
         socket.close();
     }
 
-    public static String consumer() throws Exception{
+    /**
+     * 消费消息
+     * @return
+     * @throws Exception
+     */
+    public static String consumer() throws Exception {
         Socket socket = new Socket(InetAddress.getLocalHost(), BrokerServer.PORT);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -42,9 +48,9 @@ public class MqClient {
     }
 
     public static void main(String[] args) throws Exception {
-        MqClient.produce("消息"+1);
-        MqClient.produce("消息"+2);
-        MqClient.produce("消息"+3);
+//        MqClient.produce("消息" + 1);
+//        MqClient.produce("消息" + 2);
+//        MqClient.produce("消息" + 3);
 
         System.out.println(MqClient.consumer());
     }

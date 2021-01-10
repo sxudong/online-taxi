@@ -10,6 +10,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
+ * 服务端
+ *
  * @author yueyi2019
  */
 public class BrokerServer implements Runnable {
@@ -29,18 +31,19 @@ public class BrokerServer implements Runnable {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream());
 
-            while (true){
+            while (true) {
                 String str = in.readLine();
-                if (str == null){
+                if (str == null) {
                     continue;
                 }
-                System.out.println("收到消息："+str);
-
-                if (("consumer").equals(str)){
+                System.out.println("收到消息：" + str);
+                // 如果里面有"consumer"就从Broker面取消息
+                if (("consumer").equals(str)) {
                     String message = Broker.consumer();
                     out.println(message);
                     out.flush();
-                }else{
+                } else {
+                    //没有"consumer"就往里面插入消息
                     Broker.produce(str);
                 }
             }
@@ -51,14 +54,11 @@ public class BrokerServer implements Runnable {
         }
 
 
-
-
-
     }
 
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(PORT);
-        while (true){
+        while (true) {
             BrokerServer borkerServer = new BrokerServer(server.accept());
             new Thread(borkerServer).start();
         }
