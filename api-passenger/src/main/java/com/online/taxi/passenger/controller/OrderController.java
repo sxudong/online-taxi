@@ -42,7 +42,7 @@ public class OrderController {
 	}
 	
 	
-	/*
+	/**
 	 * 下面是演示两种调用方式
 	 */
 	@Autowired

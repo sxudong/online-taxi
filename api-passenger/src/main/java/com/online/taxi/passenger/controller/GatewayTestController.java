@@ -26,7 +26,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 @RestController
 @RequestMapping("/api-passenger-gateway-test")
 public class GatewayTestController {
-	
+
 	@GetMapping("/hello")
 	public String helloWorld() {
 		log.info("api-passenger-hello");
@@ -47,8 +47,4 @@ public class GatewayTestController {
 		
 		return ResponseResult.success(result);
 	}
-	
-	
-	
-	
 }

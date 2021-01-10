@@ -21,7 +21,11 @@ public class DispatchOrder {
     @Autowired
     private DispatchService dispatchService;
 
-
+    /**
+     * 发送给指定范围内的司机抢单
+     * @param orderId
+     * @return
+     */
     @GetMapping("/call/{orderId}")
     public ResponseResult callCar(@PathVariable("orderId") int orderId){
         //测试派给1号司机,选司机的逻辑

@@ -13,8 +13,7 @@ public class SmsClientFallbackFactory implements FallbackFactory<SmsClient> {
 
 	@Override
 	public SmsClient create(Throwable cause) {
-		return new SmsClient() {
-			
+		return new SmsClient() { // 匿名内部类
 			@Override
 			public ResponseResult sendSms(SmsSendRequest smsSendRequest) {
 				System.out.println("feign异常："+cause);
@@ -22,5 +21,4 @@ public class SmsClientFallbackFactory implements FallbackFactory<SmsClient> {
 			}
 		};
 	}
-
 }

@@ -29,6 +29,10 @@ public class ApiPassengerApplication {
 		SpringApplication.run(ApiPassengerApplication.class, args);
 	}
 
+	/**
+	 * RestTemplate是Spring提供的同步HTTP网络客户端接口，它可以简化客户端与HTTP服务器之间的交互，
+	 * 并且它强制使用RESTful风格。它会处理HTTP连接和关闭，只需要使用者提供服务器的地址(URL)和模板参数。
+	 */
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate() {

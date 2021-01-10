@@ -21,6 +21,7 @@ public class JwtUtil {
      * @return
      */
     public static String createToken(String subject, Date issueDate) {
+        // setHeader()     头信息
         // setIssuer()     jwt签发者
         // setSubject()    jwt所面向的用户
         // setIssuedAt()   jwt的签发时间
@@ -68,5 +69,7 @@ public class JwtUtil {
         }
         System.out.println("原始值：" + parseToken(token));
     }
-
-}
+} /* Output:
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3byIsImlhdCI6MTYxMDE2Njc4MywiZXhwIjoxNjEwMTY2NzkzfQ.ZIe0V1CgX6Q3EM7OYeLhhj9rbfTu63LIQWccW2oT8SMCD5U7KLk8sAE3y-HN2bCsPMJnfAw2SbB7d156j_5aXQ
+原始值：wo
+*/

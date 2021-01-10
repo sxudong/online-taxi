@@ -22,7 +22,7 @@ public class DispatchServiceImpl implements DispatchService {
     public ResponseResult dispatch(int orderId, List<Integer> driverIdList) {
         for (int driverId:driverIdList
              ) {
-            redisTemplate.opsForValue().setIfAbsent(RedisKeyConstant.DRIVER_LISTEN_ORDER_PRE +driverId,orderId+"");
+            redisTemplate.opsForValue().setIfAbsent(RedisKeyConstant.DRIVER_LISTEN_ORDER_PRE + driverId,orderId + "");
         }
 
         return ResponseResult.success("");
