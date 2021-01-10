@@ -49,6 +49,7 @@ public class RedisConfig {
 //    public RedissonClient redissonRed1(){
 //        Config config = new Config();
 //        config.useSingleServer().setAddress("127.0.0.1:6379").setDatabase(0);
+//        //config.useSingleServer().setAddress("redis://172.0.0.1:6379").setPassword("a123456").setDatabase(0);
 //        return Redisson.create(config);
 //    }
 //    @Bean
@@ -64,9 +65,9 @@ public class RedisConfig {
 //        return Redisson.create(config);
 //    }
     //以上为红锁
-    
-    
-    
+
+
+
     // 单个redis
     @Bean
     @ConditionalOnMissingBean(StringRedisTemplate.class)
@@ -74,6 +75,6 @@ public class RedisConfig {
     	StringRedisTemplate redisTemplate = new StringRedisTemplate();
     	redisTemplate.setConnectionFactory(redisConnectionFactory);
     	return redisTemplate;
-    	
+
     }
 }
