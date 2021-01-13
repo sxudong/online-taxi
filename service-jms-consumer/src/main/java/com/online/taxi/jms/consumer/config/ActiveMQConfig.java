@@ -53,10 +53,14 @@ public class ActiveMQConfig {
 
         bean.setConnectionFactory(connectionFactory);
         /**
-         * 客户端手动确认，这就意味着AcitveMQ将不会自动ACK任何消息。
-         * 如果一个conmuser在消费结束前没有调用message.acknowledge()确认一个消息，
-         * 之后调用其他conmuser时会再次消费它，因为对于broker而言，那些尚未真正ACK的消息被视为未消费，
-         * 直到它被确认。
+         * 客户端手动确认，这就意味着 AcitveMQ 将不会自动 ACK 任何消息。
+         * 如果一个 conmuser 在消费结束前没有调用 message.acknowledge() 确认一个消息，之
+         * 后调用其他 conmuser 时会再次消费它，因为对于 broker 而言，那些尚未真正 ACK 的
+         * 消息被视为未消费，直到它被确认。
+         *
+         * 这里设置"2"就是手动ACK，就是我消费完了，我手动给队列回复一个“我消费了”，然后消
+         * 息才会从队列中去掉。如果不手动回复ACK的话，消息消费失败没有写到事件表，这个东西
+         * 就丢了。
          */
         bean.setSessionAcknowledgeMode(2);
         return bean;

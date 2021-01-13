@@ -26,3 +26,5 @@ app更新服务（service-app-update）：8003
 网关（online-taxi-gateway）：9000
 
 健康检查（cloud-admin）: 6010
+
+手写消息队列（mq-demo）

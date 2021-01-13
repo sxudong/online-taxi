@@ -11,9 +11,7 @@ import org.springframework.jms.annotation.EnableJms;
 @SpringBootApplication
 @EnableJms
 public class ServiceJmsConsumerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceJmsConsumerApplication.class, args);
 	}
-
 }

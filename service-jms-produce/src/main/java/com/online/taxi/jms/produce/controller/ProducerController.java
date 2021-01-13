@@ -17,16 +17,13 @@ public class ProducerController {
     //注入点对点的模式（Queue模式）
     @Autowired
     private Queue queue;
- 
     //注入订阅模式（Topic）的消息
     @Autowired
     private Topic topic;
- 
     //注入springboot封装的工具类
     @Autowired
     private JmsMessagingTemplate jms;
- 
- 
+
     /**
      * 点对点模式（queue）模式发消息
      * @param text
